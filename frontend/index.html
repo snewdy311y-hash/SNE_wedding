@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Undangan Pernikahan Digital">
+    <meta name="theme-color" content="#c9a86c">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Undangan Pernikahan">
+    <meta property="og:description" content="Kami mengundang Anda untuk menghadiri pernikahan kami">
+    <meta property="og:image" content="assets/og-image.jpg">
+    
+    <title>Undangan Pernikahan</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- =====================================================================
+         COVER / OPENING
+         ===================================================================== -->
+    <div id="cover">
+        <div class="cover-content">
+            <!-- Ornament -->
+            <div class="cover-ornament">
+                <svg viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 25C100 25 80 10 50 10C20 10 0 25 0 25C0 25 20 40 50 40C80 40 100 25 100 25Z" fill="#c9a86c" opacity="0.3"/>
+                    <path d="M100 25C100 25 120 10 150 10C180 10 200 25 200 25C200 25 180 40 150 40C120 40 100 25 100 25Z" fill="#c9a86c" opacity="0.3"/>
+                    <circle cx="100" cy="25" r="8" fill="#c9a86c"/>
+                </svg>
+            </div>
+            
+            <p class="cover-title">THE WEDDING OF</p>
+            
+            <h1 class="cover-names">
+                <span class="groom-name">Romeo</span>
+                <span class="ampersand">&</span>
+                <span class="bride-name">Juliet</span>
+            </h1>
+            
+            <p class="cover-date resepsi-date">Sabtu, 15 Maret 2026</p>
+            
+            <!-- Guest Greeting (shown if code exists) -->
+            <div class="guest-greeting" style="display: none;">
+                <p class="guest-label">Kepada Yth.</p>
+                <p class="guest-name">Nama Tamu</p>
+            </div>
+            
+            <button id="open-invitation" class="open-btn">
+                <i class="fas fa-envelope-open"></i>
+                Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MAIN CONTENT
+         ===================================================================== -->
+    <main id="main-content">
+        
+        <!-- HERO SECTION -->
+        <section class="section hero-section">
+            <div class="hero-content" data-aos="fade-up">
+                <p class="hero-badge script-font">We Are Getting Married</p>
+                
+                <h1 class="hero-names">
+                    <span class="groom-name">Romeo</span>
+                    <span class="ampersand">&</span>
+                    <span class="bride-name">Juliet</span>
+                </h1>
+                
+                <div class="ornament-line">
+                    <i class="fas fa-heart"></i>
+                </div>
+                
+                <p class="hero-date resepsi-date">Sabtu, 15 Maret 2026</p>
+            </div>
+        </section>
+
+        <!-- QUOTE SECTION -->
+        <section class="section quote-section">
+            <div class="container" data-aos="fade-up">
+                <div class="ornament-line">
+                    <i class="fas fa-quran"></i>
+                </div>
+                <p class="quote-text">
+                    "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."
+                </p>
+                <p class="quote-source">QS. Ar-Rum: 21</p>
+            </div>
+        </section>
+
+        <!-- COUPLE SECTION -->
+        <section class="section couple-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Mempelai</h2>
+                <p class="section-subtitle" data-aos="fade-up">Bride & Groom</p>
+                
+                <div class="couple-container">
+                    <!-- Groom -->
+                    <div class="couple-card" data-aos="fade-right">
+                        <div class="couple-photo-wrapper">
+                            <img src="https://via.placeholder.com/300x300?text=Groom" alt="Mempelai Pria" class="groom-photo">
+                        </div>
+                        <h3 class="couple-name groom-name">Romeo</h3>
+                        <p class="couple-fullname groom-fullname">Romeo Montague</p>
+                        <p class="couple-parents">
+                            Putra dari<br>
+                            <span class="groom-parents">Bapak & Ibu Montague</span>
+                        </p>
+                    </div>
+                    
+                    <!-- Divider -->
+                    <div class="couple-divider" data-aos="zoom-in">&</div>
+                    
+                    <!-- Bride -->
+                    <div class="couple-card" data-aos="fade-left">
+                        <div class="couple-photo-wrapper">
+                            <img src="https://via.placeholder.com/300x300?text=Bride" alt="Mempelai Wanita" class="bride-photo">
+                        </div>
+                        <h3 class="couple-name bride-name">Juliet</h3>
+                        <p class="couple-fullname bride-fullname">Juliet Capulet</p>
+                        <p class="couple-parents">
+                            Putri dari<br>
+                            <span class="bride-parents">Bapak & Ibu Capulet</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN SECTION -->
+        <section class="section countdown-section">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Menghitung Hari</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Counting Down</p>
+                
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT SECTION -->
+        <section class="section event-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Waktu & Tempat</h2>
+                <p class="section-subtitle" data-aos="fade-up">Save The Date</p>
+                
+                <div class="event-grid">
+                    <!-- Akad -->
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="event-icon">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <h3 class="event-title">Akad Nikah</h3>
+                        <p class="event-date akad-date">Sabtu, 15 Maret 2026</p>
+                        <p class="event-time akad-time">08:00 WIB</p>
+                    </div>
+                    
+                    <!-- Resepsi -->
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="event-icon">
+                            <i class="fas fa-champagne-glasses"></i>
+                        </div>
+                        <h3 class="event-title">Resepsi</h3>
+                        <p class="event-date resepsi-date">Sabtu, 15 Maret 2026</p>
+                        <p class="event-time resepsi-time">11:00 - 14:00 WIB</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENUE SECTION -->
+        <section class="section venue-section">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Lokasi</h2>
+                <p class="section-subtitle">Location</p>
+                
+                <div class="venue-card">
+                    <h3 class="venue-name">Hotel Grand Ballroom</h3>
+                    <p class="venue-address">Jl. Raya No. 123, Jakarta Selatan</p>
+                    
+                    <a href="#" class="maps-btn maps-link" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Buka di Google Maps
+                    </a>
+                    
+                    <div class="maps-embed">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2904273459373!2d106.82291867461752!3d-6.224952893775196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7c7b5c8f1%3A0x6b5b5b5b5b5b5b5b!2sJakarta!5e0!3m2!1sen!2sid!4v1234567890"
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="section gallery-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Galeri</h2>
+                <p class="section-subtitle" data-aos="fade-up">Our Moments</p>
+                
+                <div class="gallery-grid">
+                    <!-- Gallery items will be populated by JavaScript -->
+                    <div class="gallery-item" data-aos="zoom-in">
+                        <img src="https://via.placeholder.com/400x400?text=Photo+1" alt="Gallery 1">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://via.placeholder.com/400x400?text=Photo+2" alt="Gallery 2">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://via.placeholder.com/400x400?text=Photo+3" alt="Gallery 3">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="https://via.placeholder.com/400x400?text=Photo+4" alt="Gallery 4">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="https://via.placeholder.com/400x400?text=Photo+5" alt="Gallery 5">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="https://via.placeholder.com/400x400?text=Photo+6" alt="Gallery 6">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP SECTION -->
+        <section class="section rsvp-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Konfirmasi Kehadiran</h2>
+                <p class="section-subtitle" data-aos="fade-up">RSVP</p>
+                
+                <div class="rsvp-card" data-aos="fade-up">
+                    <div class="rsvp-status"></div>
+                    
+                    <form id="rsvp-form">
+                        <div class="form-group">
+                            <label for="rsvp-nama">Nama</label>
+                            <input type="text" id="rsvp-nama" placeholder="Nama lengkap Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Apakah Anda akan hadir?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" name="kehadiran" id="hadir" value="Hadir" checked>
+                                    <label for="hadir">
+                                        <i class="fas fa-check"></i> Hadir
+                                    </label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" name="kehadiran" id="tidak-hadir" value="Tidak Hadir">
+                                    <label for="tidak-hadir">
+                                        <i class="fas fa-times"></i> Tidak Hadir
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group jumlah-group">
+                            <label for="rsvp-jumlah">Jumlah Tamu yang Hadir</label>
+                            <input type="number" id="rsvp-jumlah" min="1" max="5" value="1">
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Kirim Konfirmasi
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- WISHES SECTION -->
+        <section class="section wishes-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Ucapan & Doa</h2>
+                <p class="section-subtitle" data-aos="fade-up">Wishes</p>
+                
+                <div class="wishes-container">
+                    <!-- Wish Form -->
+                    <div class="wish-form-container" data-aos="fade-right">
+                        <h4 style="margin-bottom: 20px;">Kirim Ucapan</h4>
+                        <form id="wish-form">
+                            <div class="form-group">
+                                <label for="wish-nama">Nama</label>
+                                <input type="text" id="wish-nama" placeholder="Nama Anda" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="wish-text">Ucapan & Doa</label>
+                                <textarea id="wish-text" placeholder="Tulis ucapan dan doa untuk kedua mempelai..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="wish-kehadiran">Kehadiran</label>
+                                <select name="wish-kehadiran" id="wish-kehadiran">
+                                    <option value="Hadir">Akan Hadir</option>
+                                    <option value="Tidak Hadir">Tidak Bisa Hadir</option>
+                                    <option value="Masih Ragu">Masih Ragu</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-heart"></i> Kirim Ucapan
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Wishes List -->
+                    <div class="wishes-list" data-aos="fade-left">
+                        <p class="no-wishes">Memuat ucapan...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GIFT SECTION -->
+        <section class="section gift-section">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Amplop Digital</h2>
+                <p class="section-subtitle">Wedding Gift</p>
+                
+                <p class="gift-intro">
+                    Tanpa mengurangi rasa hormat, bagi Anda yang ingin memberikan tanda kasih kepada kami, 
+                    dapat melalui transfer ke rekening berikut:
+                </p>
+                
+                <div class="gift-cards">
+                    <div class="gift-card">
+                        <h4><i class="fas fa-university"></i> Bank BCA</h4>
+                        <p class="bank-info bank-info-1">1234567890 a.n. Romeo</p>
+                        <button class="copy-btn" data-copy="1234567890">
+                            <i class="fas fa-copy"></i> Salin
+                        </button>
+                    </div>
+                    
+                    <div class="gift-card">
+                        <h4><i class="fas fa-university"></i> Bank Mandiri</h4>
+                        <p class="bank-info bank-info-2">0987654321 a.n. Juliet</p>
+                        <button class="copy-btn" data-copy="0987654321">
+                            <i class="fas fa-copy"></i> Salin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer-section">
+            <div class="container">
+                <h2 class="footer-names">
+                    <span class="groom-name">Romeo</span> & <span class="bride-name">Juliet</span>
+                </h2>
+                
+                <p class="footer-message">
+                    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i 
+                    berkenan hadir untuk memberikan doa restu kepada kami.
+                </p>
+                
+                <div class="social-share">
+                    <button id="share-wa" class="share-btn" title="Share ke WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                    <button class="share-btn" onclick="copyToClipboard(window.location.href); showToast('Link disalin!');" title="Copy Link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+                
+                <p class="copyright">
+                    Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> | Wedding Invitation System
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- =====================================================================
+         MUSIC TOGGLE BUTTON
+         ===================================================================== -->
+    <button id="music-toggle" title="Toggle Music">
+        <i class="fas fa-volume-mute"></i>
+    </button>
+
+    <!-- =====================================================================
+         LIGHTBOX
+         ===================================================================== -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- =====================================================================
+         SCRIPTS
+         ===================================================================== -->
+    <!-- AOS Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

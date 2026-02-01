@@ -5,7 +5,7 @@
  */
 
 // GANTI dengan URL Web App Anda setelah deploy
-const API_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbwDTfIkvWGVxpgKJY7DvaeJakKT2Stmiy3ekRSjRkwLUjpK-vBOfIBgrVf0b13I_ND2/exec';
 
 /**
  * Base fetch function dengan error handling
@@ -218,3 +218,4 @@ async function copyToClipboard(text) {
         return false;
     }
 }
+

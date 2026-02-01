@@ -795,22 +795,16 @@
         // =============================================================================
         // API FUNCTIONS
         // =============================================================================
+        // Pakai GET untuk semua panggilan ke Apps Script agar tidak kena CORS preflight (POST diblokir dari GitHub Pages)
         async function apiCall(action, method = 'GET', data = null) {
             try {
                 let url = `${API_URL}?action=${action}`;
-                const options = {
-                    method: method,
-                    headers: { 'Content-Type': 'application/json' },
-                };
-
-                if (method === 'POST' && data) {
-                    options.body = JSON.stringify({ action, ...data });
-                } else if (method === 'GET' && data) {
+                const options = { method: 'GET' };
+                if (data) {
                     Object.keys(data).forEach(key => {
-                        url += `&${key}=${encodeURIComponent(data[key])}`;
+                        url += `&${key}=${encodeURIComponent(data[key] || '')}`;
                     });
                 }
-
                 const response = await fetch(url, options);
                 return await response.json();
             } catch (error) {
@@ -826,14 +820,7 @@
             const password = document.getElementById('login-password').value;
             const errorEl = document.getElementById('login-error');
             
-            // DEBUG: lihat password yang dikirim (buka F12 > Console). Hapus setelah selesai debug.
-            console.log('Password dikirim:', JSON.stringify(password));
-            console.log('Panjang:', password.length);
-            
-            const result = await apiCall('verifyAdmin', 'POST', { password });
-            
-            // DEBUG: lihat response dari API
-            console.log('Response API:', result);
+            const result = await apiCall('verifyAdmin', 'GET', { password });
             
             if (result.success) {
                 adminPassword = password;
@@ -1036,7 +1023,7 @@
                 `Konfirmasi check-in untuk <strong>${currentGuest.nama}</strong>?`,
                 'success',
                 async () => {
-                    const result = await apiCall('checkIn', 'POST', {
+                    const result = await apiCall('checkIn', 'GET', {
                         code: currentGuest.uniqueCode,
                         password: adminPassword
                     });
@@ -1063,7 +1050,7 @@
                 `Berikan suvenir <strong>${currentGuest.kategori || 'Reguler'}</strong> untuk <strong>${currentGuest.nama}</strong>?`,
                 'warning',
                 async () => {
-                    const result = await apiCall('giveSouvenir', 'POST', {
+                    const result = await apiCall('giveSouvenir', 'GET', {
                         code: currentGuest.uniqueCode,
                         password: adminPassword
                     });
@@ -1219,4 +1206,3 @@
     </script>
 </body>
 </html>
-

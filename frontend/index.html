@@ -301,6 +301,23 @@
             </div>
         </section>
 
+        <!-- E-TICKET / QR CHECK-IN (hanya tampil jika tamu buka dari link personal ?code=XXX) -->
+        <section class="section qr-ticket-section" id="qr-ticket-section" style="display: none;">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">E-Ticket</h2>
+                <p class="section-subtitle">Tunjukkan saat check-in</p>
+                
+                <div class="qr-ticket-card">
+                    <p class="qr-ticket-desc">Tunjukkan QR code berikut ke panitia saat tiba di lokasi acara untuk proses check-in.</p>
+                    <div class="qr-ticket-image-wrapper">
+                        <img id="qr-ticket-img" src="" alt="QR Code Check-in" class="qr-ticket-image">
+                    </div>
+                    <p class="qr-ticket-guest-name" id="qr-ticket-guest-name"></p>
+                    <p class="qr-ticket-code"><small>Kode: <strong id="qr-ticket-code"></strong></small></p>
+                </div>
+            </div>
+        </section>
+
         <!-- WISHES SECTION -->
         <section class="section wishes-section">
             <div class="container">

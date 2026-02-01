@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Start countdown
     startCountdown();
     
-    // Load wishes
-    loadWishes();
+    // Load wishes (dikomentar karena daftar ucapan disembunyikan)
+    // loadWishes();
 });
 
 /**
@@ -446,7 +446,7 @@ async function handleWishSubmit(e) {
         if (result.success) {
             showToast('Ucapan berhasil dikirim!', 'success');
             form.reset();
-            loadWishes(); // Reload wishes
+            // loadWishes(); // Reload wishes (dikomentar - daftar ucapan disembunyikan)
         } else {
             showToast(result.error || 'Gagal mengirim ucapan', 'error');
         }

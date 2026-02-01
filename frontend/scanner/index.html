@@ -826,7 +826,14 @@
             const password = document.getElementById('login-password').value;
             const errorEl = document.getElementById('login-error');
             
+            // DEBUG: lihat password yang dikirim (buka F12 > Console). Hapus setelah selesai debug.
+            console.log('Password dikirim:', JSON.stringify(password));
+            console.log('Panjang:', password.length);
+            
             const result = await apiCall('verifyAdmin', 'POST', { password });
+            
+            // DEBUG: lihat response dari API
+            console.log('Response API:', result);
             
             if (result.success) {
                 adminPassword = password;
@@ -1212,3 +1219,4 @@
     </script>
 </body>
 </html>
+

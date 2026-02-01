@@ -301,19 +301,26 @@
             </div>
         </section>
 
-        <!-- E-TICKET / QR CHECK-IN (hanya tampil jika tamu buka dari link personal ?code=XXX) -->
-        <section class="section qr-ticket-section" id="qr-ticket-section" style="display: none;">
+        <!-- E-TICKET / QR CHECK-IN (selalu tampil; isi QR hanya jika buka dari link ?code=XXX) -->
+        <section class="section qr-ticket-section" id="qr-ticket-section">
             <div class="container" data-aos="fade-up">
                 <h2 class="section-title">E-Ticket</h2>
                 <p class="section-subtitle">Tunjukkan saat check-in</p>
                 
-                <div class="qr-ticket-card">
+                <!-- Tampil ketika ada code di URL -->
+                <div class="qr-ticket-card" id="qr-ticket-with-code" style="display: none;">
                     <p class="qr-ticket-desc">Tunjukkan QR code berikut ke panitia saat tiba di lokasi acara untuk proses check-in.</p>
                     <div class="qr-ticket-image-wrapper">
                         <img id="qr-ticket-img" src="" alt="QR Code Check-in" class="qr-ticket-image">
                     </div>
                     <p class="qr-ticket-guest-name" id="qr-ticket-guest-name"></p>
                     <p class="qr-ticket-code"><small>Kode: <strong id="qr-ticket-code"></strong></small></p>
+                </div>
+                
+                <!-- Tampil ketika TIDAK ada code di URL (buka langsung tanpa link personal) -->
+                <div class="qr-ticket-card qr-ticket-no-code" id="qr-ticket-no-code" style="display: none;">
+                    <p class="qr-ticket-desc">Untuk menampilkan QR check-in, buka undangan melalui <strong>link yang dikirim panitia</strong> (link yang berisi kode Anda, contoh: <code>...?code=ABC123</code>).</p>
+                    <p class="qr-ticket-desc" style="margin-top: 12px; font-size: 0.9rem; color: var(--color-text-light);">Jika Anda sudah dapat link dari panitia, klik link tersebut lalu scroll ke bagian E-Ticket di bawah ini.</p>
                 </div>
             </div>
         </section>
@@ -354,10 +361,12 @@
                         </form>
                     </div>
                     
-                    <!-- Wishes List -->
+                    <!-- Wishes List (disembunyikan - uncomment untuk tampilkan daftar ucapan) -->
+                    <!--
                     <div class="wishes-list" data-aos="fade-left">
                         <p class="no-wishes">Memuat ucapan...</p>
                     </div>
+                    -->
                 </div>
             </div>
         </section>

@@ -874,22 +874,16 @@
         // =============================================================================
         // API
         // =============================================================================
+        // Pakai GET untuk semua panggilan agar tidak kena CORS preflight (POST diblokir dari GitHub Pages)
         async function apiCall(action, method = 'GET', data = null) {
             try {
                 let url = `${API_URL}?action=${action}`;
-                const options = {
-                    method: method,
-                    headers: { 'Content-Type': 'application/json' },
-                };
-
-                if (method === 'POST' && data) {
-                    options.body = JSON.stringify({ action, ...data });
-                } else if (method === 'GET' && data) {
+                const options = { method: 'GET' };
+                if (data) {
                     Object.keys(data).forEach(key => {
-                        url += `&${key}=${encodeURIComponent(data[key])}`;
+                        url += `&${key}=${encodeURIComponent(data[key] || '')}`;
                     });
                 }
-
                 const response = await fetch(url, options);
                 return await response.json();
             } catch (error) {
@@ -905,7 +899,7 @@
             const password = document.getElementById('login-password').value;
             const errorEl = document.getElementById('login-error');
             
-            const result = await apiCall('verifyAdmin', 'POST', { password });
+            const result = await apiCall('verifyAdmin', 'GET', { password });
             
             if (result.success) {
                 adminPassword = password;

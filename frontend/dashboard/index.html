@@ -900,6 +900,7 @@
             const errorEl = document.getElementById('login-error');
             
             const result = await apiCall('verifyAdmin', 'GET', { password });
+            console.log('verifyAdmin response:', result);
             
             if (result.success) {
                 adminPassword = password;
@@ -1203,3 +1204,4 @@
     </script>
 </body>
 </html>
+

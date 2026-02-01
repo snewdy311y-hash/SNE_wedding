@@ -8,31 +8,18 @@
 const API_URL = 'https://script.google.com/macros/s/AKfycbwDTfIkvWGVxpgKJY7DvaeJakKT2Stmiy3ekRSjRkwLUjpK-vBOfIBgrVf0b13I_ND2/exec';
 
 /**
- * Base fetch function dengan error handling
+ * Base fetch - pakai GET untuk hindari CORS preflight (POST diblokir dari GitHub Pages)
  */
 async function apiCall(action, method = 'GET', data = null) {
     try {
         let url = `${API_URL}?action=${action}`;
-        const options = {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            mode: 'cors'
-        };
-
-        if (method === 'POST' && data) {
-            options.body = JSON.stringify({ action, ...data });
-        } else if (method === 'GET' && data) {
-            // Add parameters to URL
+        if (data) {
             Object.keys(data).forEach(key => {
-                url += `&${key}=${encodeURIComponent(data[key])}`;
+                url += `&${key}=${encodeURIComponent(data[key] != null ? data[key] : '')}`;
             });
         }
-
-        const response = await fetch(url, options);
+        const response = await fetch(url, { method: 'GET' });
         const result = await response.json();
-        
         return result;
     } catch (error) {
         console.error('API Error:', error);
@@ -74,7 +61,7 @@ async function getWishes(limit = 50) {
  * @param {number} jumlahHadir - Jumlah orang yang akan hadir
  */
 async function submitRSVP(code, status, jumlahHadir) {
-    return await apiCall('submitRSVP', 'POST', {
+    return await apiCall('submitRSVP', 'GET', {
         code,
         status,
         jumlahHadir
@@ -88,7 +75,7 @@ async function submitRSVP(code, status, jumlahHadir) {
  * @param {string} kehadiran - Status kehadiran
  */
 async function submitWish(nama, ucapan, kehadiran = 'Hadir') {
-    return await apiCall('submitWish', 'POST', {
+    return await apiCall('submitWish', 'GET', {
         nama,
         ucapan,
         kehadiran
@@ -104,7 +91,7 @@ async function submitWish(nama, ucapan, kehadiran = 'Hadir') {
  * @param {string} password 
  */
 async function verifyAdmin(password) {
-    return await apiCall('verifyAdmin', 'POST', { password });
+    return await apiCall('verifyAdmin', 'GET', { password });
 }
 
 /**
@@ -129,7 +116,7 @@ async function getAllGuests(password) {
  * @param {string} password - Admin password
  */
 async function checkInGuest(code, password) {
-    return await apiCall('checkIn', 'POST', { code, password });
+    return await apiCall('checkIn', 'GET', { code, password });
 }
 
 /**
@@ -138,7 +125,7 @@ async function checkInGuest(code, password) {
  * @param {string} password - Admin password
  */
 async function giveSouvenir(code, password) {
-    return await apiCall('giveSouvenir', 'POST', { code, password });
+    return await apiCall('giveSouvenir', 'GET', { code, password });
 }
 
 // =============================================================================
@@ -218,4 +205,3 @@ async function copyToClipboard(text) {
         return false;
     }
 }
-

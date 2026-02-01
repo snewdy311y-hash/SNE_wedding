@@ -60,6 +60,9 @@ async function loadInitialData() {
             if (guestResult.success) {
                 guestData = guestResult.data;
                 populateGuestData();
+            } else {
+                // Tetap tampilkan QR ticket jika ada code (untuk check-in)
+                showQRTicketSection();
             }
         }
     } catch (error) {
@@ -151,6 +154,36 @@ function populateGuestData() {
     if (guestData.statusRsvp && guestData.statusRsvp !== 'Belum') {
         showRSVPStatus(guestData.statusRsvp, guestData.jumlahHadir);
     }
+    
+    // Tampilkan E-Ticket / QR untuk check-in (jika ada code)
+    showQRTicketSection();
+}
+
+/**
+ * Tampilkan blok E-Ticket dengan QR code untuk check-in.
+ * Hanya tampil jika tamu buka dari link personal (?code=XXX).
+ * QR encode URL halaman ini agar saat di-scan panitia dapat code.
+ */
+function showQRTicketSection() {
+    if (!guestCode) return;
+    
+    const section = document.getElementById('qr-ticket-section');
+    const imgEl = document.getElementById('qr-ticket-img');
+    const nameEl = document.getElementById('qr-ticket-guest-name');
+    const codeEl = document.getElementById('qr-ticket-code');
+    
+    if (!section || !imgEl) return;
+    
+    // QR code = URL halaman undangan ini (berisi ?code=XXX). Saat di-scan panitia dapat code.
+    var invitationUrl = window.location.href;
+    var qrApiUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=' + encodeURIComponent(invitationUrl);
+    
+    imgEl.src = qrApiUrl;
+    imgEl.alt = 'QR Code Check-in';
+    if (nameEl) nameEl.textContent = guestData ? guestData.nama : 'Tamu';
+    if (codeEl) codeEl.innerHTML = 'Kode: <strong>' + guestCode + '</strong>';
+    
+    section.style.display = 'block';
 }
 
 /**

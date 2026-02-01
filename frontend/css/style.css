@@ -722,6 +722,57 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
+/* =============================================================================
+   E-TICKET / QR CHECK-IN SECTION
+   ============================================================================= */
+.qr-ticket-section {
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-rose-light) 100%);
+}
+
+.qr-ticket-card {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 340px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+}
+
+.qr-ticket-desc {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.qr-ticket-image-wrapper {
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    display: inline-block;
+    border: 2px solid var(--color-primary);
+    margin-bottom: 16px;
+}
+
+.qr-ticket-image {
+    width: 220px;
+    height: 220px;
+    display: block;
+}
+
+.qr-ticket-guest-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-dark);
+    margin-bottom: 4px;
+}
+
+.qr-ticket-code {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
 .form-group {
     margin-bottom: 20px;
 }

@@ -773,6 +773,13 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-light);
 }
 
+.qr-ticket-no-code code {
+    background: rgba(201, 168, 108, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
